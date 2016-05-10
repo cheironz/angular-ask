@@ -11,7 +11,7 @@ var gulp = require('gulp'),
 	notify = require('gulp-notify');
 
 // Configs
-var combineJSName = 'angular-askjg.js';
+var combineJSName = 'angular-ask.js';
 var autoprefixerConfig = {
 	browsers: ['last 2 versions', 'Android >= 4.0'],
 	cascade: true,
