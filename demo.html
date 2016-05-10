@@ -4,10 +4,10 @@
 	<meta charset="UTF-8">
 	<title>Notify-Demo</title>
 	<link rel="stylesheet" href="demo.css">
-	<link rel="stylesheet" href="styles/css/angular-ask-fullscreen.min.css" id="askTheme">
+	<link rel="stylesheet" href="styles/css/angular-ask-fullscreen.min.css" id="angularAskTheme">
 </head>
 <body ng-controller="DemoController">
-	<div class="demo">
+	<div class="demo ngask-blur">
 		<header>
 			<h1>Angular-Ask Demo Page</h1>
 			<div class="theme-select">
@@ -31,15 +31,11 @@
 				</tr>
 			</table>
 		</div>
+		<footer>
+			<p>Project Page &nbsp; <a href="https://github.com/cheiron1990/angular-ask">https://github.com/cheiron1990/angular-ask</a></p>
+		</footer>
 	</div>
-	<footer>
-		<p>Project Page &nbsp; <a href="https://github.com/cheiron1990/angular-ask">https://github.com/cheiron1990/angular-ask</a></p>
-	</footer>
-	<div ngask>
-		<div class="angular-ask">
-			
-		</div>
-	</div>
+	<div ngask id="ngask"></div>
 	<script src="scripts/vendor/jquery.min.js"></script>
 	<script src="scripts/vendor/angular.min.js"></script>
 	<script src="scripts/dist/angular-ask.min.js"></script>
@@ -50,9 +46,11 @@
 				var title = e.target.getAttribute('data-title');
 				var okFunc = function(){
 					console.log('This is an OK callback');
+					console.log($scope.ngAskResult);
 				};
 				var cancelFunc = function(){
 					console.log('This is a Cancel callback');
+					console.log($scope.ngAskResult);
 				};
 				if(type == 'confirm'){
 					var content = e.target.getAttribute('data-content');
@@ -66,7 +64,7 @@
 		$(document).ready(function(){
 			$('.theme-change').click(function(e){
 				var theme = e.target.getAttribute('data-theme');
-				var css = document.getElementById('askTheme');
+				var css = document.getElementById('angularAskTheme');
 				switch(theme){
 					case 'md':
 						css.setAttribute('href','styles/css/angular-ask-material.min.css');
