@@ -1,0 +1,37 @@
+{
+  "name": "angular-ask",
+  "version": "1.0.0",
+  "description": "Custom Confirm and Prompt for AngularJS",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cheiron1990/angular-ask.git"
+  },
+  "author": "Cheiron Zhang",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cheiron1990/angular-ask/issues"
+  },
+  "homepage": "https://github.com/cheiron1990/angular-ask#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-clean-css": "^2.0.7",
+    "gulp-concat": "^2.6.0",
+    "gulp-jshint": "^2.0.1",
+    "gulp-notify": "^2.2.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.3.1",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-uglify": "^1.5.3",
+    "jshint": "^2.9.2"
+  },
+  "dependencies": {
+    "angular": "^1.5.5",
+    "jquery": "^2.2.3"
+  }
+}
