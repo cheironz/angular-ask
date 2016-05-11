@@ -65,7 +65,6 @@ AngularAskModule.directive('ngask', [
 						if(fullScreenBlur){
 							$('.ngask-blur').removeAttr('style');
 						}
-						scope.ngAskResult = false;
 						btnClicked = false;
 						if($.isFunction(callback)){
 							callback(btnClicked);
@@ -76,7 +75,6 @@ AngularAskModule.directive('ngask', [
 						if(fullScreenBlur){
 							$('.ngask-blur').removeAttr('style');
 						}
-						scope.ngAskResult = true;
 						btnClicked = true;
 						if($.isFunction(callback)){
 							callback(btnClicked);
@@ -124,15 +122,16 @@ AngularAskModule.directive('ngask', [
 						});
 					}
 					var btnClicked;
+					var userInput;
 					cancelBtn.addEventListener('click', function(){
 						$(container).remove();
 						if(fullScreenBlur){
 							$('.ngask-blur').removeAttr('style');
 						}
-						scope.ngAskResult = undefined;
+						userInput = undefined;
 						btnClicked = false;
 						if($.isFunction(callback)){
-							callback(btnClicked);
+							callback(btnClicked, userInput);
 						}
 					});
 					okBtn.addEventListener('click', function(){
@@ -140,10 +139,10 @@ AngularAskModule.directive('ngask', [
 						if(fullScreenBlur){
 							$('.ngask-blur').removeAttr('style');
 						}
-						scope.ngAskResult = input.value;
+						userInput = input.value;
 						btnClicked = true;
 						if($.isFunction(callback)){
-							callback(btnClicked);
+							callback(btnClicked,userInput);
 						}
 					});
 				});
