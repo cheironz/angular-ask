@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Notify-Demo</title>
+	<link rel="stylesheet" href="demo-md.css">
+	<link rel="stylesheet" href="styles/css/angular-ask-material.min.css" id="angularAskTheme">
+</head>
+<body ng-controller="DemoController">
+	<div class="demo ngask-blur">
+		<header>
+			<h1>Angular-Ask Demo Page</h1>
+			<div class="theme-select">
+				<a class="theme-change" href="demo.html">Fullscreen Theme</a>
+				<a class="theme-change active" href="demo-md.html">Material Design Theme</a>
+			</div>
+		</header>
+		<div class="event-trigger">
+			<h4>Event Triggers:</h4>
+			<table>
+				<tr>
+					<td ng-click="eventTrigger($event)" data-type="confirm" data-title='Are you sure?' data-content="This will cause a problem.">Confirm</td>
+					<td ng-click="eventTrigger($event)" data-type="confirm" data-title='' data-content="This will cause a problem.">Confirm without Title</td>
+				</tr>
+				<tr>
+					<td ng-click="eventTrigger($event)" data-type="confirm" data-title='Are you sure?' data-content="">Confirm without Content</td>
+				</tr>
+				<tr>
+					<td ng-click="eventTrigger($event)" data-type="prompt" data-title="Please Input a Value:" data-placeholder="value">Prompt</td>
+					<td ng-click="eventTrigger($event)" data-type="prompt" data-title="" data-placeholder="value">Prompt without title</td>
+				</tr>
+			</table>
+		</div>
+		<footer>
+			<p>Project Page &nbsp; <a href="https://github.com/cheiron1990/angular-ask">https://github.com/cheiron1990/angular-ask</a></p>
+		</footer>
+	</div>
+	<div ngask id="ngask"></div>
+	<script src="scripts/vendor/jquery.min.js"></script>
+	<script src="scripts/vendor/angular.min.js"></script>
+	<script src="scripts/dist/angular-ask.min.js"></script>
+	<script type="text/javascript">
+		angular.module('demoApp', ['angularAsk']).controller('DemoController', ['$scope', function($scope, ngAsk){
+			$scope.eventTrigger = function(e){
+				var type = e.target.getAttribute('data-type');
+				var title = e.target.getAttribute('data-title');
+				var callback = function(btnClicked){
+					var showMsg = '';
+					if(btnClicked){
+						showMsg += 'You Pressed OK \n';
+					}else{
+						showMsg += 'You Pressed Cancel \n';
+					}
+					showMsg = showMsg + '$scope.ngAskResult: ' + $scope.ngAskResult;
+					alert(showMsg);
+				};
+				if(type == 'confirm'){
+					var content = e.target.getAttribute('data-content');
+					$scope.$emit('ngAskConfirm', title, content, callback);
+				}else if(type == 'prompt'){
+					var placeholder = e.target.getAttribute('data-placeholder');
+					$scope.$emit('ngAskPrompt', title, placeholder, callback);
+				}
+			};
+		}]);
+		$(document).ready(function(){
+			angular.bootstrap(document, ['demoApp']);
+		});
+	</script>
+</body>
+</html>

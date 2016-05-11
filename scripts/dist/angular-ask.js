@@ -50,7 +50,7 @@ AngularAskModule.directive('ngask', [
 					container.appendChild(operationsContainer);
 					var ngaskDom = document.getElementById('ngask');
 					ngaskDom.appendChild(container);
-					if(fullScreenBlur){
+					if(fullScreenBlur >= 0){
 						$('.ngask-blur').css({
 							'filter': 'blur(4px)',
 							'-webkit-filter': 'blur(4px)',
@@ -59,7 +59,7 @@ AngularAskModule.directive('ngask', [
 							'-ms-filter': 'blur(4px)'
 						});
 					}
-					var btnClicked = undefined;
+					var btnClicked;
 					cancelBtn.addEventListener('click', function(){
 						$(container).remove();
 						if(fullScreenBlur){
@@ -83,7 +83,7 @@ AngularAskModule.directive('ngask', [
 						}
 					});
 				});
-				scope.$onRootScope('ngAskPrompt', function(e, title, content, callback){
+				scope.$onRootScope('ngAskPrompt', function(e, title, placeholder, callback){
 					var container = document.createElement('div');
 					container.className += 'angular-ask';
 					if ( typeof title == 'string' && title.length !== 0) {
@@ -114,7 +114,7 @@ AngularAskModule.directive('ngask', [
 					var ngaskDom = document.getElementById('ngask');
 					ngaskDom.appendChild(container);
 					input.focus();
-					if(fullScreenBlur){
+					if(fullScreenBlur >= 0){
 						$('.ngask-blur').css({
 							'filter': 'blur(4px)',
 							'-webkit-filter': 'blur(4px)',
@@ -123,7 +123,7 @@ AngularAskModule.directive('ngask', [
 							'-ms-filter': 'blur(4px)'
 						});
 					}
-					var btnClicked = undefined;
+					var btnClicked;
 					cancelBtn.addEventListener('click', function(){
 						$(container).remove();
 						if(fullScreenBlur){

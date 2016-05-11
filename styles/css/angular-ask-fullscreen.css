@@ -6,7 +6,21 @@
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 999; }
+  z-index: 999;
+  -webkit-animation-name: 'enter';
+          animation-name: 'enter';
+  -webkit-animation-duration: 210ms;
+          animation-duration: 210ms;
+  -webkit-animation-timing-function: ease-in-out-cubic;
+          animation-timing-function: ease-in-out-cubic;
+  -webkit-animation-delay: 0;
+          animation-delay: 0;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-direction: normal;
+          animation-direction: normal;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards; }
   .angular-ask:before {
     content: url("data:image/svg+xml,%3Csvg%20width%3D%2238px%22%20height%3D%2264px%22%20viewBox%3D%22594%20169%2038%2064%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M603.638672%2C187.693359%20C603.966797%2C182.607422%20607.371094%2C178.367188%20612.662109%2C178.367188%20C617.830078%2C178.367188%20621.275391%2C182.525391%20621.275391%2C186.873047%20C621.275391%2C190.933594%20619.552734%2C193.148438%20614.466797%2C196.224609%20C608.806641%2C199.546875%20606.427734%2C203.238281%20606.796875%2C209.308594%20L606.837891%2C212.220703%20L616.353516%2C212.220703%20L616.353516%2C209.841797%20C616.353516%2C205.740234%20617.871094%2C203.607422%20623.244141%2C200.490234%20C628.822266%2C197.167969%20631.939453%2C192.779297%20631.939453%2C186.503906%20C631.939453%2C177.480469%20624.433594%2C169%20613.195312%2C169%20C601.013672%2C169%20594.328125%2C178.054688%20594%2C187.693359%20L603.638672%2C187.693359%20Z%20M611.71875%2C231.498047%20C615.041016%2C231.498047%20617.666016%2C228.914062%20617.666016%2C225.673828%20C617.666016%2C222.433594%20615.041016%2C219.890625%20611.71875%2C219.890625%20C608.396484%2C219.890625%20605.730469%2C222.433594%20605.730469%2C225.673828%20C605.730469%2C228.914062%20608.396484%2C231.498047%20611.71875%2C231.498047%20L611.71875%2C231.498047%20Z%22%20id%3D%22path-1%22%3E%3C%2Fpath%3E%0A%20%20%20%20%20%20%20%20%3Cfilter%20x%3D%22-50%25%22%20y%3D%22-50%25%22%20width%3D%22200%25%22%20height%3D%22200%25%22%20filterUnits%3D%22objectBoundingBox%22%20id%3D%22filter-2%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3CfeOffset%20dx%3D%220%22%20dy%3D%221%22%20in%3D%22SourceAlpha%22%20result%3D%22shadowOffsetOuter1%22%3E%3C%2FfeOffset%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3CfeColorMatrix%20values%3D%220%200%200%200%200.2673%20%20%200%200%200%200%200.52056%20%20%200%200%200%200%200.81%20%200%200%200%201%200%22%20type%3D%22matrix%22%20in%3D%22shadowOffsetOuter1%22%3E%3C%2FfeColorMatrix%3E%0A%20%20%20%20%20%20%20%20%3C%2Ffilter%3E%0A%20%20%20%20%20%20%20%20%3Cfilter%20x%3D%22-50%25%22%20y%3D%22-50%25%22%20width%3D%22200%25%22%20height%3D%22200%25%22%20filterUnits%3D%22objectBoundingBox%22%20id%3D%22filter-3%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3CfeOffset%20dx%3D%220%22%20dy%3D%221%22%20in%3D%22SourceAlpha%22%20result%3D%22shadowOffsetInner1%22%3E%3C%2FfeOffset%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3CfeComposite%20in%3D%22shadowOffsetInner1%22%20in2%3D%22SourceAlpha%22%20operator%3D%22arithmetic%22%20k2%3D%22-1%22%20k3%3D%221%22%20result%3D%22shadowInnerInner1%22%3E%3C%2FfeComposite%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3CfeColorMatrix%20values%3D%220%200%200%200%200.3102%20%20%200%200%200%200%200.604106667%20%20%200%200%200%200%200.94%20%200%200%200%201%200%22%20type%3D%22matrix%22%20in%3D%22shadowInnerInner1%22%3E%3C%2FfeColorMatrix%3E%0A%20%20%20%20%20%20%20%20%3C%2Ffilter%3E%0A%20%20%20%20%20%20%20%20%3Cfilter%20x%3D%22-50%25%22%20y%3D%22-50%25%22%20width%3D%22200%25%22%20height%3D%22200%25%22%20filterUnits%3D%22objectBoundingBox%22%20id%3D%22filter-4%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3CfeOffset%20dx%3D%220%22%20dy%3D%221%22%20in%3D%22SourceAlpha%22%20result%3D%22shadowOffsetInner1%22%3E%3C%2FfeOffset%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3CfeComposite%20in%3D%22shadowOffsetInner1%22%20in2%3D%22SourceAlpha%22%20operator%3D%22arithmetic%22%20k2%3D%22-1%22%20k3%3D%221%22%20result%3D%22shadowInnerInner1%22%3E%3C%2FfeComposite%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3CfeColorMatrix%20values%3D%220%200%200%200%200.3102%20%20%200%200%200%200%200.604106667%20%20%200%200%200%200%200.94%20%200%200%200%201%200%22%20type%3D%22matrix%22%20in%3D%22shadowInnerInner1%22%3E%3C%2FfeColorMatrix%3E%0A%20%20%20%20%20%20%20%20%3C%2Ffilter%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Cg%20id%3D%22%3F%22%20stroke%3D%22none%22%20fill%3D%22none%22%3E%0A%20%20%20%20%20%20%20%20%3Cuse%20fill%3D%22black%22%20fill-opacity%3D%221%22%20filter%3D%22url(%23filter-2)%22%20xlink%3Ahref%3D%22%23path-1%22%3E%3C%2Fuse%3E%0A%20%20%20%20%20%20%20%20%3Cuse%20fill%3D%22%234990E2%22%20fill-rule%3D%22evenodd%22%20xlink%3Ahref%3D%22%23path-1%22%3E%3C%2Fuse%3E%0A%20%20%20%20%20%20%20%20%3Cuse%20fill%3D%22black%22%20fill-opacity%3D%221%22%20filter%3D%22url(%23filter-3)%22%20xlink%3Ahref%3D%22%23path-1%22%3E%3C%2Fuse%3E%0A%20%20%20%20%20%20%20%20%3Cuse%20fill%3D%22black%22%20fill-opacity%3D%221%22%20filter%3D%22url(%23filter-4)%22%20xlink%3Ahref%3D%22%23path-1%22%3E%3C%2Fuse%3E%0A%20%20%20%20%3C%2Fg%3E%0A%3C%2Fsvg%3E");
     display: block;
@@ -79,3 +93,27 @@
         font-weight: bolder; }
         .angular-ask .operations button.ok:hover {
           color: #90bbed; }
+
+@-webkit-keyframes enter {
+  0% {
+    border-radius: 100%;
+    opacity: 0;
+    -webkit-transform: scale(0, 0);
+            transform: scale(0, 0); }
+  100% {
+    border-radius: 0;
+    opacity: 1;
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1); } }
+
+@keyframes enter {
+  0% {
+    border-radius: 100%;
+    opacity: 0;
+    -webkit-transform: scale(0, 0);
+            transform: scale(0, 0); }
+  100% {
+    border-radius: 0;
+    opacity: 1;
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1); } }

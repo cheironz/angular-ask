@@ -1,0 +1,126 @@
+.angular-ask{	
+	background: #FFFFFF;
+	box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.12), 0px 4px 4px 0px rgba(0,0,0,0.24);
+	border-radius: 2px;
+
+	width: 520px;
+	height: auto;
+
+	padding: 32px 0 76px 0;
+
+	position: fixed;
+	top: 36%;
+	left: 50%;
+
+	animation-name: 'enter';
+	animation-duration: 210ms;
+	animation-timing-function: ease-in-out-cubic;
+	animation-delay: 0;
+	animation-iteration-count: 1;
+	animation-direction: normal;
+	animation-fill-mode: forwards;
+
+	&:before{
+		content: url('data:image/svg+xml,%3Csvg%20width%3D%2238px%22%20height%3D%2263px%22%20viewBox%3D%2252%2055%2038%2063%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%3E%0A%20%20%20%20%3Cdefs%3E%3C%2Fdefs%3E%0A%20%20%20%20%3Cpath%20d%3D%22M61.6386719%2C73.6933594%20C61.9667969%2C68.6074219%2065.3710938%2C64.3671875%2070.6621094%2C64.3671875%20C75.8300781%2C64.3671875%2079.2753906%2C68.5253906%2079.2753906%2C72.8730469%20C79.2753906%2C76.9335938%2077.5527344%2C79.1484375%2072.4667969%2C82.2246094%20C66.8066406%2C85.546875%2064.4277344%2C89.2382812%2064.796875%2C95.3085938%20L64.8378906%2C98.2207031%20L74.3535156%2C98.2207031%20L74.3535156%2C95.8417969%20C74.3535156%2C91.7402344%2075.8710938%2C89.6074219%2081.2441406%2C86.4902344%20C86.8222656%2C83.1679688%2089.9394531%2C78.7792969%2089.9394531%2C72.5039062%20C89.9394531%2C63.4804688%2082.4335938%2C55%2071.1953125%2C55%20C59.0136719%2C55%2052.328125%2C64.0546875%2052%2C73.6933594%20L61.6386719%2C73.6933594%20Z%20M69.71875%2C117.498047%20C73.0410156%2C117.498047%2075.6660156%2C114.914062%2075.6660156%2C111.673828%20C75.6660156%2C108.433594%2073.0410156%2C105.890625%2069.71875%2C105.890625%20C66.3964844%2C105.890625%2063.7304688%2C108.433594%2063.7304688%2C111.673828%20C63.7304688%2C114.914062%2066.3964844%2C117.498047%2069.71875%2C117.498047%20L69.71875%2C117.498047%20Z%22%20id%3D%22%3F%22%20stroke%3D%22none%22%20fill%3D%22%23FFFFFF%22%20fill-rule%3D%22evenodd%22%3E%3C%2Fpath%3E%0A%3C%2Fsvg%3E');
+		background-color: #4A90E2;
+		border-radius: 2px 0 0 2px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 142px;
+		height: 100%;
+		position: absolute;
+		left: 0;
+		top: 0;
+	}
+
+	.title{
+		font-family: 'Roboto', system, -apple-system, '.SFNSDisplay-Regular', HelveticaNeue, Arial, 'Noto Sans', 'Noto Sans CJK SC', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft Yahei', sans-serif;
+		color: #4A4A4A;
+		font-size: 22px;
+		font-weight: 600px;
+		margin: 0 28px 16px 170px;
+	}
+
+	.content{
+		font-family: 'Roboto', system, -apple-system, '.SFNSDisplay-Regular', HelveticaNeue, Arial, 'Noto Sans', 'Noto Sans CJK SC', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft Yahei', sans-serif;
+		color: #4A4A4A;
+		font-size: 15px;
+		font-weight: normal;
+		margin: 16px 28px 0 170px;
+	}
+
+	form{
+		text-align: center;
+		width: 322px;
+		margin: 13px 28px 0 170px;
+		padding: 0;
+		input{
+			color: rgba(0, 0, 0, 0.87);
+			font-size: 15px;
+			line-height: 31px;
+			background: none;
+			border: none;
+			border-bottom: 1px solid #979797;
+			outline: none;
+			margin: 0;
+			padding: 0 8px;
+			width: 306px;
+			height: 31px;
+
+			&:focus{
+				border-bottom-color: #4A90E2;
+			}
+		}
+	}
+
+	.operations{
+		text-align: right;
+		width: auto;
+		letter-spacing: -4px;
+		white-space: -4px;
+		font-size: 0;
+		position: absolute;
+		right: 28px;
+		bottom: 16px;
+		button{
+			font-family: 'Roboto', system, -apple-system, '.SFNSDisplay-Regular', HelveticaNeue, Arial, 'Noto Sans', 'Noto Sans CJK SC', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft Yahei', sans-serif;
+			font-size: 16px;
+			line-height: 28px;
+			text-align: center;
+			border: none;
+			background: none;
+			outline: none;
+			display: inline-block;
+			height: 36px;
+			margin: 0;
+			padding: 0 18px;
+			cursor: pointer;
+
+			&.cancel{
+				color: #9B9B9B;
+				font-weight: normal;
+				&:hover{
+					color: lighten(#9B9B9B, 16%);
+				}
+			}
+
+			&.ok{
+				color: #4A90E2;
+				font-weight: bolder;
+				&:hover{
+					color: lighten(#4A90E2, 16%);
+				}
+			}
+		}
+	}
+}
+
+@keyframes enter{
+	0%{
+		transform: scale(1, 0) translate(-50%, 0);
+	}
+	100%{
+		transform: scale(1, 1) translate(-50%, -50%);
+	}
+}
