@@ -11,8 +11,8 @@
 		<header>
 			<h1>Angular-Ask Demo Page</h1>
 			<div class="theme-select">
-				<button data-theme="fullscreen" class="theme-change active">Fullscreen Theme</button>
-				<button data-theme="md" class="theme-change">Material Design Theme</button>
+				<a class="theme-change active" href="demo.html">Fullscreen Theme</a>
+				<a class="theme-change" href="demo-md.html">Material Design Theme</a>
 			</div>
 		</header>
 		<div class="event-trigger">
@@ -45,12 +45,14 @@
 				var type = e.target.getAttribute('data-type');
 				var title = e.target.getAttribute('data-title');
 				var callback = function(btnClicked){
+					var showMsg = '';
 					if(btnClicked){
-						console.log('You pressed OK');
+						showMsg += 'You Pressed OK \n';
 					}else{
-						console.log('You pressed Cancel');
+						showMsg += 'You Pressed Cancel \n';
 					}
-					console.log($scope.ngAskResult);
+					showMsg = showMsg + '$scope.ngAskResult: ' + $scope.ngAskResult;
+					alert(showMsg);
 				};
 				if(type == 'confirm'){
 					var content = e.target.getAttribute('data-content');
@@ -62,21 +64,6 @@
 			};
 		}]);
 		$(document).ready(function(){
-			$('.theme-change').click(function(e){
-				var theme = e.target.getAttribute('data-theme');
-				var css = document.getElementById('angularAskTheme');
-				switch(theme){
-					case 'md':
-						css.setAttribute('href','styles/css/angular-ask-material.min.css');
-						$('.theme-select button').removeClass('active');
-						$(e.target).addClass('active');
-						break;
-					default:
-						css.setAttribute('href','styles/css/angular-ask-fullscreen.min.css');
-						$('.theme-select button').removeClass('active');
-						$(e.target).addClass('active');
-				}
-			});
 			angular.bootstrap(document, ['demoApp']);
 		});
 	</script>

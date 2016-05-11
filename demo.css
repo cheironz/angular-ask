@@ -4,6 +4,12 @@
 	padding: 0;
 }
 body{
+	background-image: url(bg.png);
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+	background-color: #464646;
 }
 .demo{
 	width: 640px;
@@ -12,14 +18,13 @@ body{
 header{
 	width: 100%;
 	height: 170px;
-	background-color: #4A90E2;
 	position: absolute;
 	top: 0;
 	left: 0;
 	z-index: -1;
 }
 header h1{
-	color: #FFF;
+	color: #333;
 	font-size: 36px;
 	font-weight: normal;
 	width: 640px;
@@ -29,20 +34,21 @@ header h1{
 	width: 640px;
 	margin: 0 auto;
 }
-.theme-select button{
+.theme-select a{
 	background: none;
 	border: none;
 	outline: none;
-	color: #fff;
+	color: #333;
 	font-size: 14px;
 	text-align: center;
 	line-height: 20px;
+	text-decoration: none;
 	height: 36px;
 	padding: 8px 16px;
 	margin-right: 0;
 	cursor: pointer;
 }
-.theme-select button.active, .theme-select button:hover{
+.theme-select a.active, .theme-select a:hover{
 	border-bottom: 4px solid #F8E71C;
 }
 .event-trigger{

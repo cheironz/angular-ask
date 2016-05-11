@@ -52,11 +52,11 @@ AngularAskModule.directive('ngask', [
 					ngaskDom.appendChild(container);
 					if(fullScreenBlur){
 						$('.ngask-blur').css({
-							'filter': 'blur(2px)',
-							'-webkit-filter': 'blur(2px)',
-							'-moz-filter': 'blur(2px)',
-							'-o-filter': 'blur(2px)',
-							'-ms-filter': 'blur(2px)'
+							'filter': 'blur(4px)',
+							'-webkit-filter': 'blur(4px)',
+							'-moz-filter': 'blur(4px)',
+							'-o-filter': 'blur(4px)',
+							'-ms-filter': 'blur(4px)'
 						});
 					}
 					var btnClicked = undefined;
@@ -113,13 +113,14 @@ AngularAskModule.directive('ngask', [
 					container.appendChild(operationsContainer);
 					var ngaskDom = document.getElementById('ngask');
 					ngaskDom.appendChild(container);
+					input.focus();
 					if(fullScreenBlur){
 						$('.ngask-blur').css({
-							'filter': 'blur(2px)',
-							'-webkit-filter': 'blur(2px)',
-							'-moz-filter': 'blur(2px)',
-							'-o-filter': 'blur(2px)',
-							'-ms-filter': 'blur(2px)'
+							'filter': 'blur(4px)',
+							'-webkit-filter': 'blur(4px)',
+							'-moz-filter': 'blur(4px)',
+							'-o-filter': 'blur(4px)',
+							'-ms-filter': 'blur(4px)'
 						});
 					}
 					var btnClicked = undefined;
