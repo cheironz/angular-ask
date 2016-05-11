@@ -1,7 +1,7 @@
 # angular-ask
 
 #### DEMO: 
-[http://cheiron1990.github.io/angular-notify/demo.html](http://cheiron1990.github.io/angular-notify/demo.html)
+[http://cheiron1990.github.io/angular-ask/demo.html](http://cheiron1990.github.io/angular-ask/demo.html)
 
 #### 使用说明
 
