@@ -15,30 +15,14 @@ AngularAskModule.config(['$provide', function($provide){
 	}]);
 }]);
 
-
-/*
-Dom Structure
-<div class="angular-ask">
-	<p class="title">Are you sure?</p>
-	<p class="content">This will cause a problem.</p>
-	<form ><input type="text" placeholder="what is the value?" /></form>
-	<div class="operations">
-		<button class="cancel">Cancel</button>
-		<button class="ok">OK</button>
-	</div>
-</div>
-*/
-
-
 AngularAskModule.directive('ngask', [
 	function(){
 		return {
 			restrict: 'EAC',
 			link: function(scope, elem, attrs){
-				scope.ngAskResult = 'test';
 				var themeHref = document.getElementById('angularAskTheme').getAttribute('href');
 				var fullScreenBlur = themeHref.indexOf('fullscreen');
-				scope.$onRootScope('ngAskConfirm', function(e, title, content, okFunc, cancelFunc){
+				scope.$onRootScope('ngAskConfirm', function(e, title, content, callback){
 					var container = document.createElement('div');
 					container.className += 'angular-ask';
 					if ( typeof title == 'string' && title.length !== 0) {
@@ -75,14 +59,16 @@ AngularAskModule.directive('ngask', [
 							'-ms-filter': 'blur(2px)'
 						});
 					}
+					var btnClicked = undefined;
 					cancelBtn.addEventListener('click', function(){
 						$(container).remove();
 						if(fullScreenBlur){
 							$('.ngask-blur').removeAttr('style');
 						}
 						scope.ngAskResult = false;
-						if($.isFunction(cancelFunc)){
-							cancelFunc();
+						btnClicked = false;
+						if($.isFunction(callback)){
+							callback(btnClicked);
 						}
 					});
 					okBtn.addEventListener('click', function(){
@@ -91,20 +77,74 @@ AngularAskModule.directive('ngask', [
 							$('.ngask-blur').removeAttr('style');
 						}
 						scope.ngAskResult = true;
-						if($.isFunction(okFunc)){
-							okFunc();
+						btnClicked = true;
+						if($.isFunction(callback)){
+							callback(btnClicked);
 						}
-					})
+					});
 				});
-				scope.$onRootScope('ngAskPrompt', function(e, title, content, okFunc, cancelFunc){
+				scope.$onRootScope('ngAskPrompt', function(e, title, content, callback){
+					var container = document.createElement('div');
+					container.className += 'angular-ask';
 					if ( typeof title == 'string' && title.length !== 0) {
-						console.log('title:' + title);
+						var titleContainer = document.createElement('p');
+						titleContainer.className += 'title';
+						titleContainer.innerHTML = title;
+						container.appendChild(titleContainer);
 					}
+					var form = document.createElement('form');
+					var input = document.createElement('input');
+					input.setAttribute('type', 'text');
 					if ( typeof placeholder == 'string' && placeholder.length !== 0) {
-						console.log('placeholder:' + placeholder);
+						input.setAttribute('placeholder', placeholder);
 					}
-					okFunc();
-					cancelFunc();
+					form.appendChild(input);
+					container.appendChild(form);
+					var operationsContainer = document.createElement('div');
+					operationsContainer.className += 'operations';
+					var cancelBtn = document.createElement('button');
+					cancelBtn.className += 'cancel';
+					cancelBtn.innerHTML = 'Cancel';
+					var okBtn = document.createElement('button');
+					okBtn.className += 'ok';
+					okBtn.innerHTML = 'OK';
+					operationsContainer.appendChild(cancelBtn);
+					operationsContainer.appendChild(okBtn);
+					container.appendChild(operationsContainer);
+					var ngaskDom = document.getElementById('ngask');
+					ngaskDom.appendChild(container);
+					if(fullScreenBlur){
+						$('.ngask-blur').css({
+							'filter': 'blur(2px)',
+							'-webkit-filter': 'blur(2px)',
+							'-moz-filter': 'blur(2px)',
+							'-o-filter': 'blur(2px)',
+							'-ms-filter': 'blur(2px)'
+						});
+					}
+					var btnClicked = undefined;
+					cancelBtn.addEventListener('click', function(){
+						$(container).remove();
+						if(fullScreenBlur){
+							$('.ngask-blur').removeAttr('style');
+						}
+						scope.ngAskResult = undefined;
+						btnClicked = false;
+						if($.isFunction(callback)){
+							callback(btnClicked);
+						}
+					});
+					okBtn.addEventListener('click', function(){
+						$(container).remove();
+						if(fullScreenBlur){
+							$('.ngask-blur').removeAttr('style');
+						}
+						scope.ngAskResult = input.value;
+						btnClicked = true;
+						if($.isFunction(callback)){
+							callback(btnClicked);
+						}
+					});
 				});
 			}
 		};

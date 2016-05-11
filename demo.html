@@ -44,20 +44,20 @@
 			$scope.eventTrigger = function(e){
 				var type = e.target.getAttribute('data-type');
 				var title = e.target.getAttribute('data-title');
-				var okFunc = function(){
-					console.log('This is an OK callback');
-					console.log($scope.ngAskResult);
-				};
-				var cancelFunc = function(){
-					console.log('This is a Cancel callback');
+				var callback = function(btnClicked){
+					if(btnClicked){
+						console.log('You pressed OK');
+					}else{
+						console.log('You pressed Cancel');
+					}
 					console.log($scope.ngAskResult);
 				};
 				if(type == 'confirm'){
 					var content = e.target.getAttribute('data-content');
-					$scope.$emit('ngAskConfirm', title, content, okFunc, cancelFunc);
+					$scope.$emit('ngAskConfirm', title, content, callback);
 				}else if(type == 'prompt'){
 					var placeholder = e.target.getAttribute('data-placeholder');
-					$scope.$emit('ngAskPrompt', title, placeholder, okFunc, cancelFunc);
+					$scope.$emit('ngAskPrompt', title, placeholder, callback);
 				}
 			};
 		}]);
