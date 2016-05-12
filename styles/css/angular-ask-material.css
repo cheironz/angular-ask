@@ -48,12 +48,16 @@
     color: #4A4A4A;
     font-size: 22px;
     font-weight: 600px;
+    word-wrap: break-word;
+    word-break: normal;
     margin: 0 28px 16px 170px; }
   .angular-ask .content {
     font-family: 'Roboto', system, -apple-system, '.SFNSDisplay-Regular', HelveticaNeue, Arial, 'Noto Sans', 'Noto Sans CJK SC', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft Yahei', sans-serif;
     color: #4A4A4A;
     font-size: 15px;
     font-weight: normal;
+    word-wrap: break-word;
+    word-break: normal;
     margin: 16px 28px 0 170px; }
   .angular-ask form {
     text-align: center;
