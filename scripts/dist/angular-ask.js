@@ -22,7 +22,7 @@ AngularAskModule.directive('ngask', [
 			link: function(scope, elem, attrs){
 				var themeHref = document.getElementById('angularAskTheme').getAttribute('href');
 				var fullScreenBlur = themeHref.indexOf('fullscreen');
-				scope.$onRootScope('ngAskConfirm', function(e, title, content, callback){
+				scope.$onRootScope('ngAskConfirm', function(e, title, content, init, callback){
 					var container = document.createElement('div');
 					container.className += 'angular-ask';
 					if ( typeof title == 'string' && title.length !== 0) {
@@ -59,6 +59,9 @@ AngularAskModule.directive('ngask', [
 							'-ms-filter': 'blur(4px)'
 						});
 					}
+					if($.isFunction(init)){
+						init();
+					}
 					var btnClicked;
 					cancelBtn.addEventListener('click', function(){
 						$(container).remove();
@@ -81,7 +84,7 @@ AngularAskModule.directive('ngask', [
 						}
 					});
 				});
-				scope.$onRootScope('ngAskPrompt', function(e, title, placeholder, callback){
+				scope.$onRootScope('ngAskPrompt', function(e, title, placeholder, init, callback){
 					var container = document.createElement('div');
 					container.className += 'angular-ask';
 					if ( typeof title == 'string' && title.length !== 0) {
@@ -120,6 +123,9 @@ AngularAskModule.directive('ngask', [
 							'-o-filter': 'blur(4px)',
 							'-ms-filter': 'blur(4px)'
 						});
+					}
+					if($.isFunction(init)){
+						init();
 					}
 					var btnClicked;
 					var userInput;

@@ -63,12 +63,15 @@
 					showMsg = showMsg + 'userInput: ' + userInput;
 					alert(showMsg);
 				};
+				var init = function(){
+					console.log('Do something when display the dialog');
+				};
 				if(type == 'confirm'){
 					var content = e.target.getAttribute('data-content');
-					$scope.$emit('ngAskConfirm', title, content, confirmCallback);
+					$scope.$emit('ngAskConfirm', title, content, init, confirmCallback);
 				}else if(type == 'prompt'){
 					var placeholder = e.target.getAttribute('data-placeholder');
-					$scope.$emit('ngAskPrompt', title, placeholder, promptCallback);
+					$scope.$emit('ngAskPrompt', title, placeholder, init, promptCallback);
 				}
 			};
 		}]);
